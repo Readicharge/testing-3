@@ -18,12 +18,12 @@ const apiRoutes = require("./Core/routes/main");
 
 // Mongodb connection 
 const connectDB = require("./config/db");
-const resp = connectDB();
+connectDB();
 
 // Middleware
 app.get('/',(req,res) =>
 {
-   res.json({message: resp})
+   res.json({message: "Api running..."})
    
 })
 
