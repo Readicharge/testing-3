@@ -15,7 +15,6 @@ app.use(cors());
 
 // Defining the apiRoutes ( backend/routes/apiRoutes.js)
 const apiRoutes = require("./Core/routes/main");
-const getSpecificService = require('./Core/controllers/Service').getSpecificService;
 
 // Mongodb connection 
 const connectDB = require("./config/db");
@@ -28,11 +27,8 @@ app.get('/',(req,res) =>
    
 })
 
-app.get('/test', getSpecificService)
-
-
-// // Middleware 
-// app.use('/newApi',apiRoutes);
+// Middleware 
+app.use('/api',apiRoutes);
 
 
 // error handeling middleware
